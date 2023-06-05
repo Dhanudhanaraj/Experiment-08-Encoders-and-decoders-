@@ -55,42 +55,72 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+#### Step-1:
+create module encoder and decoder.
 
+#### Step-2:
+Get inputs and outputs for encoders and decoders.
+
+#### Step-3:
+perform or operation for encoder and and logic for decoders.
+
+#### Step-4:
+perform RTL LOGIC and get waveform. Step-5: End the module.
 
 
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
-
-
-
-
+Developed by:DHANUMALYA D 
+RegisterNumber:212222230030  
+```
+#### ENCODER
+```
+module enc(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a,b,c;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+#### DECODER
+```
+module deco(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+```
 
 ### RTL LOGIC  
 
+#### ENCODER
+![enn](https://github.com/Dhanudhanaraj/Experiment-08-Encoders-and-decoders-/assets/119218812/f4411ce1-1c8b-49a3-a86c-1f721bc98fea)
 
-
-
-
-
-
+#### DECODER
+![den](https://github.com/Dhanudhanaraj/Experiment-08-Encoders-and-decoders-/assets/119218812/1ae34de0-995e-498f-99fb-b998159a5712)
 
 ### TIMING DIGRAMS  
+#### ENCODER
+![ent](https://github.com/Dhanudhanaraj/Experiment-08-Encoders-and-decoders-/assets/119218812/7382b434-65c5-4546-8bc9-842350cb0f22)
 
-
-
-
+#### DECODER
+![det](https://github.com/Dhanudhanaraj/Experiment-08-Encoders-and-decoders-/assets/119218812/7c8ad66c-69eb-4a95-90cc-9a59700ddb85)
 
 ### TRUTH TABLE 
+#### ENCODER
+![image](https://github.com/Dhanudhanaraj/Experiment-08-Encoders-and-decoders-/assets/119218812/30c7b793-d92b-4952-8026-73189d781626)
 
-
-
-
-
+#### DECODER
+![image](https://github.com/Dhanudhanaraj/Experiment-08-Encoders-and-decoders-/assets/119218812/3db2c6a4-37b7-46fe-a770-a845f92a055e)
 
 ### RESULTS 
+Thus the program to design encoder and decoder is successfully completed.
